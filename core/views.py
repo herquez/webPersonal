@@ -1,7 +1,13 @@
-from django.shortcuts import render, HttpResponse
+from django.shortcuts import render
 
 def home(request):
-    return HttpResponse("<h1>Home page</h1>")
+    return render(request, 'core/home.html')
 
 def about(request):
-    return HttpResponse("<h1>About</h1>")
+    return render(request, 'core/about.html')
+
+def portfolio(request):
+    return render(request, 'core/portfolio.html')
+
+def contact(request):
+    return render(request, 'core/contact.html')
