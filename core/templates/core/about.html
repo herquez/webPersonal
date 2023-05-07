@@ -1,8 +1,9 @@
-{% extends 'core/template.html' %} {% block title %}Acerca de{% endblock title%}
+{% extends 'core/template.html' %} {% load static %} {% block title %}Acerca de{% endblock title%}
+{% block background %}{% static 'core/img/about-bg.jpg' %}{% endblock background %}
+{% block header %}
+<h1>Acerca de</h1>
+{% endblock header %}
 {% block content %}
-
-<h2>Acerca de mi</h2>
-
 <span>
   Página en la que hablo sobre mi, estudios, intereses, proyectos realizados y
   experiencia.
