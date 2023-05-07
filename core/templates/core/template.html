@@ -42,14 +42,13 @@
     </nav>
 
     <!-- Cabecera -->
-    <header class="masthead" style="background-image: url({% static 'core/img/home-bg.jpg' %})">
+    <header class="masthead" style="background-image: url({% block background %}{% endblock background %})">
       <div class="overlay"></div>
       <div class="container">
         <div class="row">
           <div class="col-lg-8 col-md-10 mx-auto">
             <div class="site-heading">
-              <h1>Ángel Hernández</h1>
-              <span class="subheading">Ingeniero de Software</span>
+              {% block header %}{% endblock header %}
             </div>
           </div>
         </div>
@@ -57,8 +56,17 @@
     </header>
 
     <!-- Content -->
-    <content>{% block content %}{% endblock content %}</content>
+    <content>
+      <div class='container'>
+        <div {% if request.path != '/portfolio/' %}class='row'{% endif %}>
+          {% block content %}{% endblock content %}
+        </div>
+      </div>
+    </content>
 
+    {% if request.path != "/"%}
+    <hr/>
+    {% endif %}
     <!-- Page footer -->
     <footer>
       <div class="container">

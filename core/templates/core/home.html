@@ -1,9 +1,7 @@
-{% extends 'core/template.html' %} {% block title %}Inicio{% endblock title %}
-{% block content %}
-
-<h2>Página de inicio</h2>
-
-<span>
-  Página de bienvenida donde aparecen enlaces e información actualizada al día.
-</span>
-{% endblock content %}
+{% extends 'core/template.html' %} {% load static %} {% block title %}Inicio{% endblock title %}
+{% block background %}{% static 'core/img/home-bg.jpg' %}{% endblock background %}
+{% block header %}
+<h1>Ángel Hernández</h1>
+<span class="subheading">Ingeniero de Software</span>
+{% endblock header %}
+{% block content %}{% endblock content %}

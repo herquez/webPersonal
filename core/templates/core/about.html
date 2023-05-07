@@ -1,10 +1,16 @@
-{% extends 'core/template.html' %} {% block title %}Acerca de{% endblock title%}
+{% extends 'core/template.html' %} {% load static %} {% block title %}Acerca de{% endblock title%}
+{% block background %}{% static 'core/img/about-bg.jpg' %}{% endblock background %}
+{% block header %}
+<h1>Acerca de</h1>
+<div class="subheading">Biografía</div>
+{% endblock header %}
 {% block content %}
-
-<h2>Acerca de mi</h2>
-
-<span>
-  Página en la que hablo sobre mi, estudios, intereses, proyectos realizados y
-  experiencia.
-</span>
+<div class="col-lg-3 col-md-4 offset-lg-1">
+  <img class="img-fluid avatar" src="{% static 'core/img/avatar.jpg' %}" alt="">
+</div>
+<div class="col-lg-7 col-md-8">
+  <h2 class="section-heading">Ángel Hernández</h2>   
+  <p>Nacido en... lorem ipsum dolor sit amet, consectetur adipisicing elit. Saepe nostrum ullam eveniet pariatur voluptates odit, fuga atque ea nobis sit soluta odio.</p>
+  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Saepe nostrum ullam eveniet pariatur voluptates odit...</p>
+</div>
 {% endblock content %}
