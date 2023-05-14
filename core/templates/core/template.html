@@ -57,9 +57,16 @@
 
     <!-- Content -->
     <content>
-      {% block content %}{% endblock content %}
+      <div class='container'>
+        <div {% if request.path != '/portfolio/' %}class='row'{% endif %}>
+          {% block content %}{% endblock content %}
+        </div>
+      </div>
     </content>
 
+    {% if request.path != "/"%}
+    <hr/>
+    {% endif %}
     <!-- Page footer -->
     <footer>
       <div class="container">
