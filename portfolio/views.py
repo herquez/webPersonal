@@ -1,4 +1,9 @@
 from django.shortcuts import render
+from .models import Project
 
 def portfolio(request):
-    return render(request, 'portfolio/portfolio.html')
+    projects = Project.objects.filter(deleted__isnull=True)
+    context = {
+        'projects': projects,
+    }
+    return render(request, 'portfolio/portfolio.html', context)
